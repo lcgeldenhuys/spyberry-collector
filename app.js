@@ -76,7 +76,7 @@ mongoose.connection.once('open', function() {
 
   // search if a greeting has already been saved in our db
   Greeting.find( function(err, greetings) {
-    if( !err && greetings ) { // at least one greeting record already exists in our db. we can use that
+    if( !err && (greetings.length >= 1) ) { // at least one greeting record already exists in our db. we can use that
       console.log(greetings.length+' greetings already exist in DB' );
       console.log(greetings.sentence);
     }
