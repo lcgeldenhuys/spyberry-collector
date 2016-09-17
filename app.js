@@ -25,11 +25,11 @@ var express   = require('express');
 var app       = express();
 
 var config = {
-      "USER"     : "",                  // if your database has user/pwd defined
-      "PASS"     : "",
+      "USER"     : "database_user",                  // if your database has user/pwd defined
+      "PASS"     : "database_password",
       "HOST"     : "ec2-52-63-117-90.ap-southeast-2.compute.amazonaws.com",  // the domain name of our MongoDB EC2 instance
       "PORT"     : "27017",             // this is the default port mongoDB is listening for incoming queries
-      "DATABASE" : "my_example"         // the name of your database on that instance
+      "DATABASE" : "local"         // the name of your database on that instance
     };
 
 var dbPath  = "mongodb://" + config.USER + ":" +
