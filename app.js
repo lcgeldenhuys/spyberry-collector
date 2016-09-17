@@ -75,8 +75,8 @@ mongoose.connection.once('open', function() {
   console.log('database '+config.DATABASE+' is now open on '+config.HOST );
 
   // search if a greeting has already been saved in our db
-  Greeting.find( function(err, greetings){
-    if( !err && greetings ){ // at least one greeting record already exists in our db. we can use that
+  Greeting.find( function(err, greetings) {
+    if( !err && greetings ) { // at least one greeting record already exists in our db. we can use that
       console.log(greetings.length+' greetings already exist in DB' );
     }
     else { // no records found
@@ -123,7 +123,7 @@ app.get('/', function(req, res){
       if(greetings){
         console.log('found '+greetings.length+' greetings in DB');
         // send newest greeting
-        responseText = greetings[0].sentence;
+        responseText = greetings.sentence;
       }
       console.log('sending greeting to client: '+responseText);
       res.send(responseText);
