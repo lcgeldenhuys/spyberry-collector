@@ -78,7 +78,7 @@ mongoose.connection.once('open', function() {
   Greeting.find( function(err, greetings) {
     if( !err && (greetings.length >= 1) ) { // at least one greeting record already exists in our db. we can use that
       console.log(greetings.length+' greetings already exist in DB' );
-      console.log(greetings.sentence);
+      console.log(greetings[0].sentence);
     }
     else { // no records found
       console.log('no greetings in DB yet, creating one' );
