@@ -124,7 +124,7 @@ app.get('/', function(req, res){
       if(greetings){
         console.log('found '+greetings.length+' greetings in DB');
         // send newest greeting
-        responseText = greetings.sentence;
+        responseText = greetings[0].sentence;
       }
       console.log('sending greeting to client: '+responseText);
       res.send(responseText);
